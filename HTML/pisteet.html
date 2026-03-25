@@ -1,11 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanasankarit!</title>
+  <link rel="stylesheet" href="../CSS/tyyli.css">
 </head>
 <body>
-    
+  <div class="page-wrapper">
+    <header class="header">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <img src="" alt="Logo">
+        </a>
+        <nav class="nav">
+          <a href="index.html" class="nav-link">Etusivu</a>
+          <a href="info.html" class="nav-link">Info</a>
+          <a href="pisteet.html" class="nav-link">Pisteet</a>
+          <a href="pelit.html" class="nav-link">Pelit</a>
+          </a>
+          <div class="dropdown">
+            <button class="dropdown-toggle">
+              <!-- Arrow icon using SVG -->
+              <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </button>
+            <div class="dropdown-menu">
+              <a href="#" class="dropdown-item">Sanastokortit</a>
+              <a href="#" class="dropdown-item">Kysymyskortit</a>
+              <a href="#" class="dropdown-item">Käännöskortit</a>
+              <a href="#" class="dropdown-item">Muistikortit</a>
+              <a href="#" class="dropdown-item">Historiakortit</a>
+              <a href="#" class="dropdown-item">Tehtäväkortit</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-home">
+      <div class="home-content">
+        <div class="home-text">
+          <h1 class="home-title">
+            pisteet sivu
+          </h1>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>TIK25SP Web-projekti</p>
+    </footer>
+  </div>
 </body>
 </html>
