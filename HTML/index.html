@@ -1,41 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanasankarit</title>
-    <link rel="stylesheet" href="../CSS/tyyli.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanasankarit!</title>
+  <link rel="stylesheet" href="../CSS/tyyli.css">
 </head>
 <body>
-       <header class="header">
-        <div class="logo">Logo</div>
-
+  <div class="page-wrapper">
+    <header class="header">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <img src="" alt="Logo">
+        </a>
         <nav class="nav">
-            <a href="../HTML/index.html">Etusivu</a>
-            <a href="../HTML/info.html">Info</a>
-            <a href="../HTML/pelit.html">Pelit</a>
-            <a href="../HTML/pisteet.html">Yhteispisteet</a>
+          <a href="index.html" class="nav-link">Etusivu</a>
+          <a href="info.html" class="nav-link">Info</a>
+          <a href="pisteet.html" class="nav-link">Pisteet</a>
+          <div class="dropdown">
+            <button class="dropdown-toggle">
+              Pelit
+              <!-- Arrow icon using SVG -->
+              <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </button>
+            <div class="dropdown-menu">
+              <a href="#" class="dropdown-item">Sanastokortit</a>
+              <a href="#" class="dropdown-item">Kysymyskortit</a>
+              <a href="#" class="dropdown-item">Käännöskortit</a>
+              <a href="#" class="dropdown-item">Muistikortit</a>
+              <a href="#" class="dropdown-item">Historiakortit</a>
+              <a href="#" class="dropdown-item">Tehtäväkortit</a>
+            </div>
+          </div>
         </nav>
+      </div>
     </header>
 
-    <main class="main-container">
-
-        <section class="otsikko">
-            <h1>Tervetuloa oppimaan suomea!</h1>
-
-            <p>Opi uusia sanoja, testaa tietosi ja tutustu Suomen historiaan korttipelin avulla.</p>
-
-            <a href="../Pelit/" class="btn" role="button">Tutustu peleihin!</a>
-        </section>
-
-        <section class="etusivu_kuva">
-            <img src="../Kuvat/Etusivun kuva.PNG" alt="Etusivun_kuva" />
-        </section>
+    <main class="main-home">
+      <div class="home-content">
+        <div class="home-text">
+          <h1 class="home-title">
+            Tervetuloa<br>oppimaan suomea!
+          </h1>
+          <p class="home-description">
+            Opi uusia sanoja, testaa tietosi ja tutustu Suomen historiaan korttipelin avulla.
+            Pelaa yhdessä ystävien kanssa ja tee oppimisesta hauskaa.
+          </p>
+          <a href="info.html" class="home-cta">
+            Tutustu peleihin
+          </a>
+        </div>
+      </div>
     </main>
 
     <footer class="footer">
-        TIK25SP Web-projekti
+      <p>TIK25SP Web-projekti</p>
     </footer>
-    
+  </div>
 </body>
 </html>
