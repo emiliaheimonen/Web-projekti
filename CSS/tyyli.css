@@ -153,6 +153,8 @@ a {
   display: flex;
   align-items: center;
   background-color: #f9f0f3;
+  position: relative;
+  overflow: hidden;
 }
 
 .home-content {
@@ -164,6 +166,9 @@ a {
   justify-content: space-between;
   padding: 4rem 2rem;
   gap: 2rem;
+  position: relative;
+  z-index: 1;
+  padding-right: clamp(2rem, 30vw, 30rem);
 }
 
 .home-text {
@@ -203,40 +208,54 @@ a {
   background-color: #a0627a;
 }
 
-.home-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 2rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #b5738b;
-  color: #ffffff;
-  font-size: 1.125rem;
-  font-weight: 500;
-  border-radius: 9999px;
-  transition: background-color 0.2s;
+.right-arrow {
+  width: 2rem;
+  height: 2rem;
 }
 
 .corner-image {
-    position: absolute;
-    right: 0px;
-    bottom: 60px; 
-    width: 1200px; 
-    height: auto;
-    pointer-events: none; 
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: min(820px, 56vw);
+  height: auto;
+  max-width: none;
+  pointer-events: none;
+  user-select: none;
+  display: block;
+  z-index: 0;
 }
 
-@media (max-width: 900px) {
-    .main-container {
-        flex-direction: column;
-        text-align: center;
-    }
+@media (max-width: 768px) {
+  .home-content {
+    padding-right: 2rem;
+    justify-content: center;
+    text-align: center;
+  }
 
-    .otsikko {
-        max-width: 100%;
-    }
+  .corner-image {
+    display: none;
+  }
+}
 
-    .etusivu_kuva {
-        margin-top: 30px;
-    }
+@media (min-width: 1400px) {
+  .home-content {
+    max-width: 1520px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .corner-image {
+    width: min(1100px, 58vw);
+  }
+}
+
+@media (min-width: 1800px) {
+  .home-content {
+    max-width: 1680px;
+  }
+
+  .corner-image {
+    width: min(1300px, 60vw);
+  }
 }
