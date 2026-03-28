@@ -137,7 +137,7 @@ a {
 
 
 .footer {
-  background-color: #b5738b;
+  background-color: #7E4C87;
   padding: 1rem;
   text-align: center;
 }
@@ -152,7 +152,7 @@ a {
   flex: 1;
   display: flex;
   align-items: center;
-  background-color: #f9f0f3;
+  background-color: #FFF2F7;
   position: relative;
   overflow: hidden;
 }
@@ -226,6 +226,46 @@ a {
   z-index: 0;
 }
 
+
+/* pelityypit main section */
+.main {
+  width: 100%;
+  background-color: #FFF2F7;
+  flex: 1;
+  padding: 60px 0 80px;
+}
+
+.main h1 {
+  font-size: 60px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.card-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px 40px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+
+
 @media (max-width: 768px) {
   .home-content {
     padding-right: 2rem;
@@ -236,6 +276,46 @@ a {
   .corner-image {
     display: none;
   }
+
+    .main {
+    padding: 32px 0 50px;
+  }
+
+  .main h1 {
+    font-size: 42px;
+    margin-bottom: 32px;
+    line-height: 1.1;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 0 24px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .card p {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+
+  .card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+
 }
 
 @media (min-width: 1400px) {
