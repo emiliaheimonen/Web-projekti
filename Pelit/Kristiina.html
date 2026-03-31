@@ -1,11 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sanasankarit! / Numero muistipeli</title>
+    <link rel="stylesheet" href="../CSS/Pelisivu.css">
 </head>
 <body>
-    
+    <div class="page-wrapper">
+        <header class="header">
+            <div class="header-inner">
+                <a href="#" class="logo">
+                    <img src="#" alt="logo">
+                </a>
+                <nav class="nav">
+                    <a href="#" class="nav-link">Etusivu</a>
+                    <a href="#" class="nav-link">Info</a>
+                    <a href="#" class="nav-link">Pisteet</a>
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle">
+                            Pelit
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">Sanaseikkailu</a>
+                            <a href="#" class="dropdown-item">Yhdistä sana kuvaan</a>
+                            <a href="#" class="dropdown-item">Sanaluokkapeli</a>
+                            <a href="#" class="dropdown-item">Sanaristikko</a>
+                            <a href="#" class="dropdown-item">Numero muistipeli</a>
+                            <a href="#" class="dropdown-item">Sanaluokittelija</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <main class="main-home">
+            <div class="home-content">
+                <div class="home-text">
+                    <h1 class="home-title">
+                        Numero muistipeli!
+                    </h1>
+                    <p class="home-description">
+                        Harjoita numeroiden oppimista helpolla, kivalla muistipelillä.<br>
+                        Löydä numeroille 1 - 9 vastakohta englanniksi tai suomeksi.
+                    </p>
+                    <div class="game-area">
+                        <div class="grid-container">
+                        </div>
+                        <div class="game-info">
+                            <button onclick="restart()">Aloita uudelleen</button>
+                            <p class="score-text">Pisteet: <span class="score"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <p>TIK25SP Web-projekti</p>
+        </footer>
+    </div>
+<script src="../JS/Muistipeli.js"></script>    
 </body>
 </html>
