@@ -6,7 +6,7 @@ let score = 0;
 
 document.querySelector(".score").textContent = score;
 
-fetch("../JSON/data.json")
+fetch("../JSON/NumeromuistipeliDATA.json")
     .then((res) => res.json())
     .then((data) => {
         cards = data;
