@@ -4,20 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="tyyli.css">
+    <link rel="stylesheet" href="../CSS/tyyli.css">
 </head>
 <body>
-    <h1>Sanaluokkapeli</h1>
-    
-    <div id="sana" style="font-size: 2rem; margin-bottom: 20px;"></div>
-    
-    <button class="valinta" data-luokka="substantiivi">Substantiivi</button>
-    <button class="valinta" data-luokka="verbi">Verbi</button>
-    <button class="valinta" data-luokka="adjektiivi">Adjektiivi</button>
+    <header class="header">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <img src="" alt="Logo">
+        </a>
+        <nav class="nav">
+          <a href="index.html" class="nav-link">Etusivu</a>
+          <a href="info.html" class="nav-link">Info</a>
+          <a href="pisteet.html" class="nav-link">Pisteet</a>
+          <div class="dropdown">
+            <a href="pelit.html" class="dropdown-toggle">
+              Pelit
+              <!-- Arrow icon using SVG -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="dropdown-arrow">
+  <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+</svg>
+            </a>
+            <div class="dropdown-menu">
+              <a href="#" class="dropdown-item">Sanaseikkailu</a>
+              <a href="#" class="dropdown-item">Yhdistä sana kuvaan</a>
+              <a href="#" class="dropdown-item">Sanaluokkapeli</a>
+              <a href="#" class="dropdown-item">Sanaristikko</a>
+              <a href="#" class="dropdown-item">Numero muistipeli</a>
+              <a href="#" class="dropdown-item">Sanaluokittelija</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
 
-    <p id="palaute"></p>
-    <p id="pisteet"></p>
+    <div class="sanaluokkapeli-container">
+      <h1 class="sanaluokka-otsikko">Sanaluokkapeli</h1>
 
+      <p class="pelikuvaus-sanaluokka">
+        Tässä pelissä sinulle annetaan sanoja, valitse mihin sanaluokkaan annetut sanat kuuluvat ja saa pisteitä oikeista vastauksista!
+      </p>
+    
+      <div id="sana" style="font-size: 2rem; margin-bottom: 20px;"></div>
+    
+      <button class="valinta" data-luokka="substantiivi">Substantiivi</button>
+      <button class="valinta" data-luokka="verbi">Verbi</button>
+      <button class="valinta" data-luokka="adjektiivi">Adjektiivi</button>
+
+      <p id="palaute"></p>
+      <p id="pisteet"></p>
+    </div>
   <script src="Emilia.js"></script>
 </body>
 </html>

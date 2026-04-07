@@ -4,3 +4,295 @@ button {
     margin: 5px;
     font-size: 1.2rem;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  color: #1a1a1a;
+  line-height: 1.5; 
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+.header {
+  background-color: #b5738b;
+  padding: 1rem 2rem;
+}
+
+.header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  width: 5rem;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  transition: opacity 0.2s;
+}
+
+.nav-link:hover {
+  opacity: 0.8;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.dropdown-toggle:hover {
+  opacity: 0.8;
+}
+
+.dropdown-arrow {
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: transform 0.2s;
+}
+
+.dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 0.5rem;
+  width: 12rem;
+  background-color: #ffffff;
+  border-radius: 0.375rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+  z-index: 50;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #f5e6eb;
+}
+
+
+.footer {
+  background-color: #b5738b;
+  padding: 1rem;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.main-home {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background-color: #f9f0f3;
+}
+
+.home-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  gap: 2rem;
+}
+
+.home-text {
+  max-width: 36rem;
+}
+
+.home-title {
+  font-size: 3rem;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 1.2;
+  color: #1a1a1a;
+}
+
+.home-description {
+  margin-top: 1.5rem;
+  font-size: 1.125rem;
+  color: #666666;
+  line-height: 1.7;
+}
+
+.home-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #b5738b;
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  transition: background-color 0.2s;
+}
+
+.home-cta:hover {
+  background-color: #a0627a;
+}
+
+.home-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #b5738b;
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  transition: background-color 0.2s;
+}
+
+.corner-image {
+    position: absolute;
+    right: 0px;
+    bottom: 60px; 
+    width: 1200px; 
+    height: auto;
+    pointer-events: none; 
+}
+
+
+.sanaluokkapeli-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem auto;
+    text-align: center;
+    padding: 3rem 2rem;
+
+    background: #ffffff;              /* valkoinen kortti */
+    border-radius: 1rem;              /* pehmeät kulmat */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* kevyt varjo */
+    max-width: 600px;                 /* ettei leviä liikaa */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    background: #f1a2bf; /* vaalea pinkki */
+    border-radius: 2rem;
+}
+
+.sanaluokka-otsikko {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.valinta {
+    background-color: #b5738b;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 0.5rem;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.valinta:hover {
+    background-color: #a0627a;
+    transform: translateY(-2px);
+}
+
+.pelikuvaus-sanaluokka {
+    max-width: 40rem;
+    margin: 0 auto 2rem auto;
+    text-align: center;
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    .main-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .otsikko {
+        max-width: 100%;
+    }
+
+    .etusivu_kuva {
+        margin-top: 30px;
+    }
+}
