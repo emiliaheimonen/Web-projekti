@@ -8,4 +8,105 @@
 <body>
     
 </body>
+</html<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yhdistä sana oikeaan kuvaan</title>
+  <link rel="stylesheet" href="../CSS/annikan.css" />
+</head>
+<body>
+  <div class="quiz-box">
+    <h1>Yhdistä sana oikeaan kuvaan</h1>
+    <p>Valitse oikea kuva.</p>
+
+    <div id="question">Kysymys tulee tähän</div>
+    <div id="answers" class="image-answers"></div>
+    <div id="result"></div>
+    <button id="nextBtn">Seuraava</button>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        question: "Missä on omena?",
+        answers: [
+          { image: "../Kuvat/Annikan_kuvat/omena.jpg", correct: true },
+          { image: "../Kuvat/Annikan_kuvat/päärynä.jpg", correct: false },
+          { image: "../Kuvat/Annikan_kuvat/banani.jpg", correct: false }
+        ]
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    const questionEl = document.getElementById("question");
+    const answersEl = document.getElementById("answers");
+    const resultEl = document.getElementById("result");
+    const nextBtn = document.getElementById("nextBtn");
+
+    function showQuestion() {
+      resultEl.textContent = "";
+      nextBtn.style.display = "none";
+      answersEl.innerHTML = "";
+
+      const q = questions[currentQuestion];
+      questionEl.textContent = q.question;
+
+      q.answers.forEach(answer => {
+        const button = document.createElement("button");
+        button.classList.add("image-button");
+
+        const img = document.createElement("img");
+        img.src = answer.image;
+        img.alt = "vastauskuva";
+
+        button.appendChild(img);
+        button.onclick = () => checkAnswer(answer, button);
+
+        answersEl.appendChild(button);
+      });
+    }
+
+    function checkAnswer(answer, clickedButton) {
+      const buttons = answersEl.querySelectorAll(".image-button");
+      const currentAnswers = questions[currentQuestion].answers;
+
+      buttons.forEach((button, index) => {
+        button.disabled = true;
+
+        if (currentAnswers[index].correct) {
+          button.classList.add("correct");
+        }
+      });
+
+      if (answer.correct) {
+        resultEl.textContent = "Hienoa! Oikein!";
+        score++;
+      } else {
+        clickedButton.classList.add("wrong");
+        resultEl.textContent = "Väärin!";
+      }
+
+      nextBtn.style.display = "inline-block";
+    }
+
+    nextBtn.addEventListener("click", () => {
+      currentQuestion++;
+
+      if (currentQuestion < questions.length) {
+        showQuestion();
+      } else {
+        questionEl.textContent = "Peli loppui!";
+        answersEl.innerHTML = "";
+        resultEl.textContent = "Sait " + score + " / " + questions.length + " oikein.";
+        nextBtn.style.display = "none";
+      }
+    });
+
+    showQuestion();
+  </script>
+</body>
 </html>

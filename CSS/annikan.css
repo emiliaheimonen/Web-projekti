@@ -1,0 +1,17 @@
+  /*kuvien muokkaus koodit */
+
+.image-button img {
+  width: 100%;
+  max-width: 200px;   
+  height: 150px;      
+  object-fit: cover;  
+  border-radius: 10px;
+}
+  /* asettaa kuvat keskelle */
+
+.image-answers {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
