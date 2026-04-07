@@ -1,11 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanasankarit!</title>
+  <link rel="stylesheet" href="../CSS/tyyli.css">
 </head>
 <body>
-    
+  <div class="page-wrapper">
+    <header class="header">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <img src="" alt="Logo">
+        </a>
+
+        <nav class="nav">
+          <a href="index.html" class="nav-link">Etusivu</a>
+          <a href="info.html" class="nav-link">Info</a>
+          <a href="pisteet.html" class="nav-link">Pisteet</a>
+
+          <div class="dropdown">
+            <a href="pelit.html" class="dropdown-toggle">
+              Pelit
+              <!-- Arrow icon using SVG -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="dropdown-arrow">
+                <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+              </svg>
+            </a>
+
+            <div class="dropdown-menu">
+              <a href="#" class="dropdown-item">Sanaseikkailu</a>
+              <a href="#" class="dropdown-item">Yhdistä sana kuvaan</a>
+              <a href="#" class="dropdown-item">Sanaluokkapeli</a>
+              <a href="#" class="dropdown-item">Sanaristikko</a>
+              <a href="#" class="dropdown-item">Numero muistipeli</a>
+              <a href="#" class="dropdown-item">Sanaluokittelija</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="points-main">
+  <h1>Kokonaispisteesi: <span id="total-score">0</span>/60</h1>
+
+  <div class="points-grid">
+    <a href="Thanakan.html" class="points-item">
+      <img src="../Kuvat/1.png" alt="Sanaseikkailu" class="points-icon">
+      <p>Sanaseikkailu</p>
+      <div class="points-score"><span id="sanaseikkailu-score">0</span>/10</div>
+    </a>
+
+    <a href="Annika.html" class="points-item">
+      <img src="../Kuvat/2.png" alt="Yhdistä sana kuvaan" class="points-icon">
+      <p>Yhdistä sana kuvaan</p>
+      <div class="points-score"><span id="yhdista-score">0</span>/10</div>
+    </a>
+
+    <a href="Emilia.html" class="points-item">
+      <img src="../Kuvat/3.png" alt="Sanaluokkapeli" class="points-icon">
+      <p>Sanaluokkapeli</p>
+      <div class="points-score"><span id="sanaluokkapeli-score">0</span>/10</div>
+    </a>
+
+    <a href="Anastasiia.html" class="points-item">
+      <img src="../Kuvat/4.png" alt="Sanaristikko" class="points-icon">
+      <p>Sanaristikko</p>
+      <div class="points-score"><span id="sanaristikko-score">0</span>/10</div>
+    </a>
+
+    <a href="Kristiina.html" class="points-item">
+      <img src="../Kuvat/5.png" alt="Numero muistipeli" class="points-icon">
+      <p>Numero muistipeli</p>
+      <div class="points-score"><span id="muistipeli-score">0</span>/10</div>
+    </a>
+
+    <a href="Joonas.html" class="points-item">
+      <img src="../Kuvat/6.png" alt="Sanaluokittelija" class="points-icon">
+      <p>Sanaluokittelija</p>
+      <div class="points-score"><span id="sanaluokittelija-score">0</span>/10</div>
+    </a>
+  </div>
+
+  <button class="points-reset-btn" id="reset-btn">Reset scores</button>
+</main>
+
+    <footer class="footer">
+      <p>TIK25SP Web-projekti</p>
+    </footer>
+  </div>
+
+  <script src="../JS/pisteet.js"></script>
 </body>
 </html>
