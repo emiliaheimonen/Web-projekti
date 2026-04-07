@@ -472,3 +472,116 @@ a {
     width: min(1300px, 60vw);
   }
 }
+
+/* Pelit page */
+.pelit-section {
+  padding: 3rem 2rem 4rem;
+}
+
+.pelit-container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.pelit-subtitle {
+  text-align: center;
+  color: #5f5f5f;
+  margin-top: -2rem;
+  margin-bottom: 2.5rem;
+  font-size: 1.05rem;
+}
+
+.game-select-grid {
+  gap: 1.5rem;
+}
+
+.game-select-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  min-height: 220px;
+  padding: 2rem;
+  border: 1px solid rgba(181, 115, 139, 0.25);
+  box-shadow: 0 8px 20px rgba(63, 41, 50, 0.08);
+}
+
+.game-select-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(63, 41, 50, 0.14);
+}
+
+.game-select-card .score-card-name {
+  margin-top: 0;
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.game-select-card .score-card-points {
+  margin-top: 0.25rem;
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+  color: #666;
+}
+
+.play-button {
+  margin-top: auto;
+  padding: 0.6rem 1.2rem;
+  border-radius: 9999px;
+  background: #b5738b;
+  color: #fff;
+  font-weight: 600;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.play-button:hover {
+  background: #9f6076;
+  transform: translateY(-1px);
+}
+
+.main-content {
+  flex: 1;
+  background-color: #f9f0f3;
+}
+
+.score-title {
+  text-align: center;
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 3rem;
+}
+
+.score-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.score-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #e8d0d8;
+  border-radius: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.score-card:hover {
+  transform: scale(1.05);
+}
+
+.score-card.game-select-card {
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: rgba(181, 115, 139, 0.1);
+}
+
+.game-select-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(63, 41, 50, 0.14);
+}
