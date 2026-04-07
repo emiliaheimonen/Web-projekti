@@ -79,7 +79,7 @@ a {
   background: none;
   border: none;
   cursor: pointer;
-  transition: pacity 0.2s;
+  transition: opacity 0.2s;
 }
 
 .dropdown-toggle:hover {
@@ -212,7 +212,7 @@ a {
   display: grid;
   justify-content: center;
   grid-gap: 16px;
-  grid-template-columns: repeat(6, 140px);
+  grid-template-columns: repeat(5, 140px);
   grid-template-rows: repeat(2, calc(140px / 2 * 3));
 }
 
