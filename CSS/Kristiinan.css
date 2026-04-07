@@ -163,6 +163,7 @@ a {
   font-style: italic;
   line-height: 1.2;
   color: #1a1a1a;
+  text-align: center;
 }
 
 .home-description {
@@ -170,12 +171,21 @@ a {
   font-size: 1.125rem;
   color: #666666;
   line-height: 1.7;
+  text-align: center;
+}
+
+.game-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .score-text {
   font-size: 2rem;
   font-weight: bold;
-  margin-top: 1.5rem;
+  margin-top: 0;
 }
 
 .score {
@@ -185,11 +195,10 @@ a {
 .game-info {
   display: flex;
   align-items: center;
-  gap: 2rem;
-  margin-top: 1.5rem;
+  margin-top: 0;
 }
 
-.game-info button {
+.game-layout button {
   padding: 10px 20px;
   font-size: 1.2rem;
   border-radius: 10px;
@@ -199,26 +208,26 @@ a {
   cursor: pointer;
 }
 
-.game-info button:hover {
+.game-layout button:hover {
   opacity: 0.8;
 }
 
 .game-area {
-  margin-left: 10rem;
-  margin-top: 2rem;
+  margin-left: 0;
+  margin-top: 0;
 }
 
 .grid-container {
   display: grid;
   justify-content: center;
   grid-gap: 16px;
-  grid-template-columns: repeat(5, 140px);
-  grid-template-rows: repeat(2, calc(140px / 2 * 3));
+  grid-template-columns: repeat(5, 100px);
+  grid-template-rows: repeat(2, calc(100px / 2 * 3));
 }
 
 .card {
-  height: calc(140px / 2 * 3);
-  width: 140px;
+  height: calc(100px / 2 * 3);
+  width: 100px;
   border-radius: 10px;
   background-color: white;
   position: relative;
@@ -232,7 +241,7 @@ a {
 }
 
 .front p {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -259,7 +268,7 @@ a {
 }
 
 .card .back {
-  background-image: url(../Kuvat/file.svg);
+  background-image: url(../Kuvat/Kristiina_kuvat/file.svg);
   background-position: center center;
   background-size: cover;
   backface-visibility: hidden;
