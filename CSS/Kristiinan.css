@@ -303,3 +303,66 @@ a {
   background-size: cover;
   backface-visibility: hidden;
 }
+
+@media (max-width: 900px) {
+  .game-layout {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 1.5rem;
+  }
+
+  .game-layout button {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .game-info {
+    min-width: unset;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(5, 80px);
+    grid-template-rows: repeat(2, calc(80px / 2 * 3));
+    gap: 12px;
+  }
+
+  .card {
+    width: 80px;
+    height: calc(80px / 2 * 3)
+  }
+}
+
+@media (max-width: 600px) {
+  .home-title {
+    font-size: 2rem;
+  }
+
+  .home-description {
+    font-size: 1rem;
+  }
+
+  .score-text {
+    font-size: 1.5rem;
+  }
+
+  .score {
+    font-size: 1.7rem;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(5, 60px);
+    grid-template-rows: repeat(2, calc(60px / 2 * 3));
+    gap: 8px;
+  }
+
+  .card {
+    width: 60px;
+    height: calc(60px / 2 * 3);
+  }
+
+  .front p {
+    font-size: 14px;
+  }
+}
