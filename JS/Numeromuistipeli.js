@@ -3,6 +3,7 @@ let cards = [];
 let firstCard, secondCard;
 let lockBoard = false;
 let score = 0;
+let matchedPairs = 0;
 
 document.querySelector(".score").textContent = score;
 
@@ -65,12 +66,22 @@ function checkForMatch() {
 
     if (isMatch) {
         score++;
+        matchedPairs++;
         document.querySelector(".score").textContent = score;
+        const totalPairs = cards.length / 2;
+
+        if (matchedPairs == totalPairs) {
+            showResult(score);
+        }
         disableCards();
     } else {
-        unflipCards()
+        if (score > 0) {
+            score--;
+        }
+        document.querySelector(".score").textContent = score;
+        unflipCards();
     }
-}
+}    
 
 function disableCards() {
     firstCard.removeEventListener("click", flipCard);
@@ -93,11 +104,32 @@ function resetBoard() {
     lockBoard = false;
 }
 
+function showResult(score, totalPairs) {
+    const panel = document.getElementById("result-panel");
+    const msgEl = document.getElementById("result-message");
+
+    if (score === 10) {
+        msgEl.textContent = "Löysit kaikki parit, hienoa!";
+    } else if (score < 5) {
+        msgEl.textContent = "Voi ei, yritä uudelleen!";
+    } else {
+        msgEl.textContent = "Hienosti, olit lähellä!";
+    }
+
+    panel.classList.add("visible");
+}
+
 function restart () {
     resetBoard();
     shuffleCards();
     score = 0;
+    matchedPairs = 0;
     document.querySelector(".score").textContent = score;
     gridContainer.innerHTML = "";
+
+    const panel = document.getElementById("result-panel");
+    if (panel) {
+        panel.classList.remove("visible")
+    }
     generateCards();
 }
