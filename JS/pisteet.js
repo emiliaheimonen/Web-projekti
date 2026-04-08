@@ -4,7 +4,7 @@ const yhdista = Number(localStorage.getItem("yhdistaScore")) || 0;
 const sanaluokkapeli = Number(localStorage.getItem("sanaluokkapeliScore")) || 0;
 const sanaristikko = Number(localStorage.getItem("sanaristikkoScore")) || 0;
 const muistipeli = Number(localStorage.getItem("muistipeliScore")) || 0;
-const sanaluokittelija = Number(localStorage.getItem("sanaluokittelijaScore")) || 0;
+const lajittelesanat  = Number(localStorage.getItem("lajittelesanatScore")) || 0;
 
 // Show scores
 document.getElementById("sanaseikkailu-score").textContent = sanaseikkailu;
@@ -12,7 +12,7 @@ document.getElementById("yhdista-score").textContent = yhdista;
 document.getElementById("sanaluokkapeli-score").textContent = sanaluokkapeli;
 document.getElementById("sanaristikko-score").textContent = sanaristikko;
 document.getElementById("muistipeli-score").textContent = muistipeli;
-document.getElementById("sanaluokittelija-score").textContent = sanaluokittelija;
+document.getElementById("lajittelesanat-score").textContent = lajittelesanat ;
 
 // Calculate total
 const total =
@@ -21,7 +21,7 @@ const total =
   sanaluokkapeli +
   sanaristikko +
   muistipeli +
-  sanaluokittelija;
+  lajittelesanat;
 
 document.getElementById("total-score").textContent = total;
 
@@ -32,6 +32,6 @@ document.getElementById("reset-btn").addEventListener("click", function () {
   localStorage.removeItem("sanaluokkapeliScore");
   localStorage.removeItem("sanaristikkoScore");
   localStorage.removeItem("muistipeliScore");
-  localStorage.removeItem("sanaluokittelijaScore");
+  localStorage.removeItem("lajittelesanatScore");
   location.reload();
 });
