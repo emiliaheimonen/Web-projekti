@@ -96,5 +96,17 @@
     });
   </script>
 
+
+  <script>
+setInterval(() => {
+  const text = document.getElementById("result-score")?.textContent;
+  const number = parseInt(text);
+
+  if (!isNaN(number)) {
+    localStorage.setItem("lajittelesanatScore", number);
+  }
+}, 500);
+</script>
+
 </body>
 </html>

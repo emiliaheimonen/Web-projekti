@@ -54,6 +54,25 @@
       <p id="palaute"></p>
       <p id="pisteet"></p>
     </div>
+
+   <footer class="footer">
+      <p>TIK25SP Web-projekti</p>
+    </footer>
+     
   <script src="../JS/Emilia.js"></script>
+  
+
+  <script>
+setInterval(() => {
+  const text = document.getElementById("pisteet")?.textContent;
+
+  const number = parseInt(text?.replace(/\D/g, ""));
+
+  if (!isNaN(number)) {
+    localStorage.setItem("sanaluokkapeliScore", number);
+  }
+}, 500);
+</script>
+
 </body>
 </html>

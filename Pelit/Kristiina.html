@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sanasankarit! / Numero muistipeli</title>
+    <link rel="stylesheet" href="../CSS/tyyli.css">
     <link rel="stylesheet" href="../CSS/Kristiinan.css">
 </head>
 <body>
@@ -62,6 +63,21 @@
             <p>TIK25SP Web-projekti</p>
         </footer>
     </div>
-<script src="../JS/Numeromuistipeli.js"></script>    
+<script src="../JS/Numeromuistipeli.js"></script>
+
+
+<script>
+setInterval(() => {
+  const element = document.querySelector(".score");
+  const text = element?.textContent;
+
+  const number = parseInt(text?.replace(/\D/g, ""));
+
+  if (!isNaN(number)) {
+    localStorage.setItem("muistipeliScore", number);
+  }
+}, 500);
+</script>
+    
 </body>
 </html>

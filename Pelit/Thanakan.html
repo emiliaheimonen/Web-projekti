@@ -77,5 +77,18 @@
   </div>
 
   <script src="../JS/Thanakan.js"></script>
+  
+
+  <script>
+  setInterval(() => {
+    const scoreText = document.getElementById("score")?.textContent;
+    const score = parseInt(scoreText);
+
+    if (!isNaN(score)) {
+      localStorage.setItem("sanaseikkailuScore", score);
+    }
+  }, 500);
+</script>
+
 </body>
 </html>
