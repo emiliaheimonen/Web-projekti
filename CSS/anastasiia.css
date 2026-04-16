@@ -1,0 +1,224 @@
+.sanaristikko-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem auto;
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #f1a2bf;
+    border-radius: 2rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    max-width: 1250px;
+}
+
+.sanaristikko-otsikko {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.pelikuvaus-sanaristikko {
+    max-width: 45rem;
+    margin: 0 auto 2rem auto;
+    text-align: center;
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.sanaristikko-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 2rem;
+}
+
+.toiminto-nappi {
+    background-color: #b5738b;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 0.2rem;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.toiminto-nappi:hover {
+    background-color: #a0627a;
+    transform: translateY(-2px);
+}
+
+.sanaristikko-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.ristikko-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.puzzle-title {
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: #7a2e49;
+    font-size: 1.1rem;
+}
+
+.ristikko {
+    display: grid;
+    grid-template-columns: repeat(11, 46px);
+    grid-template-rows: repeat(11, 46px);
+    gap: 2px;
+    background-color: #d1d5db;
+    padding: 8px;
+    border-radius: 14px;
+}
+
+.ruutu {
+    width: 46px;
+    height: 46px;
+    position: relative;
+    background-color: #1f2937;
+    border-radius: 4px;
+}
+
+.ruutu.valkoinen {
+    background-color: #ffffff;
+}
+
+.ruutu input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    text-align: center;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    outline: none;
+    color: #333;
+    font-weight: 600;
+}
+
+.ruutu-numero {
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    font-size: 0.68rem;
+    color: #666;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+.vihjeet {
+    background: #ffffff;
+    padding: 1.6rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    max-width: 350px;
+    text-align: left;
+}
+
+.vihjeet h2 {
+    margin-bottom: 1rem;
+}
+
+.vihje-ryhma {
+    margin-bottom: 1.5rem;
+}
+
+.vihje-ryhma h3 {
+    margin-bottom: 0.7rem;
+}
+
+.clue-item {
+    margin-bottom: 0.6rem;
+    line-height: 1.5;
+    color: #444;
+}
+
+.palaute {
+    font-weight: bold;
+    margin-top: 1rem;
+    color: #7a2e49;
+    min-height: 24px;
+}
+
+.pisteet {
+    font-weight: bold;
+    margin-top: 0.8rem;
+    color: #7a2e49;
+}
+
+.oikein {
+    background-color: #c8f7c5 !important;
+}
+
+.vaarin {
+    background-color: #f8c4c4 !important;
+}
+
+@media (max-width: 900px) {
+    .main-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .otsikko {
+        max-width: 100%;
+    }
+
+    .etusivu_kuva {
+        margin-top: 30px;
+    }
+
+    .sanaristikko-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ristikko {
+        grid-template-columns: repeat(11, 32px);
+        grid-template-rows: repeat(11, 32px);
+    }
+
+    .ruutu {
+        width: 32px;
+        height: 32px;
+    }
+
+    .ruutu input {
+        font-size: 0.95rem;
+    }
+
+    .vihjeet {
+        width: 100%;
+        max-width: 520px;
+    }
+}
+
+.right-arrow {
+    width: 2rem;
+    height: 2rem;
+}
+
+.corner-image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: min(820px, 56vw);
+    height: auto;
+    max-width: none;
+    pointer-events: none;
+    user-select: none;
+    display: block;
+    z-index: 0;
+}
