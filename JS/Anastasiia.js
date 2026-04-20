@@ -202,6 +202,13 @@ function tarkistaVastaukset() {
   });
 
   pisteet = oikeinMaara;
+  const finalScore = Math.min(
+    Math.round((oikeinMaara / inputs.length) * 10),
+    10
+  );
+
+  localStorage.setItem("sanaristikkoScore", finalScore);
+
   document.getElementById("pisteet").textContent = "Pisteet: " + pisteet;
 
   if (taytetyt === 0) {
@@ -223,7 +230,11 @@ function naytaVastaukset() {
   });
 
   pisteet = inputs.length;
+
+  localStorage.setItem("sanaristikkoScore", 10);
+
   document.getElementById("pisteet").textContent = "Pisteet: " + pisteet;
+
   document.getElementById("palaute").textContent = "Vastaukset näytetty.";
 }
 
@@ -238,6 +249,8 @@ function tyhjennaRuudukko() {
   pisteet = 0;
   document.getElementById("pisteet").textContent = "Pisteet: 0";
   document.getElementById("palaute").textContent = "";
+
+  localStorage.setItem("sanaristikkoScore", 0);
 }
 
 function uusiPeli() {

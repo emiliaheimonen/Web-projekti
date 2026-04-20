@@ -85,14 +85,5 @@
 
     <script src="../JS/Anastasiia.js"></script>
 
-    <script>
-      setInterval(() => {
-        const text = document.getElementById("pisteet")?.textContent;
-        const number = parseInt(text?.replace(/\D/g, ""));
-        if (!isNaN(number)) {
-          localStorage.setItem("sanaristikkoScore", number);
-        }
-      }, 500);
-    </script>
 </body>
 </html>
