@@ -20,7 +20,7 @@ fetch("../JSON/NumeromuistipeliDATA.json")
 
 function startGame() {
     const difficultySelect = document.getElementById("difficulty");
-    currentLevel = difficultySelect ? difficultySelect.valu : "hard";
+    currentLevel = difficultySelect ? difficultySelect.value : "hard";
 
     resetGameState();
     cards = getCardsByLevel(currentLevel);
@@ -94,7 +94,7 @@ function showCardsAtStart() {
     allCardElements.forEach(card => card.classList.add("flipped"));
 
     setTimeout(() => {
-        allCardElements.forEach(card => card.classList.remove("flippede"));
+        allCardElements.forEach(card => card.classList.remove("flipped"));
         lockBoard = false;
     }, 2500);
 }
@@ -153,7 +153,7 @@ function handleWrongGuess() {
     if (currentLevel === "hard") {
         if (score > 0) {
             score--;
-            document.querySelector("score").textContent = score;
+            document.querySelector(".score").textContent = score;
         }
     }
 }
@@ -182,7 +182,7 @@ function resetBoard() {
 function showResult(score) {
     const panel = document.getElementById("result-panel");
     const msgEl = document.getElementById("result-message");
-    const totalPairs = cards.lenght / 2;
+    const totalPairs = cards.length / 2;
 
     if (score === totalPairs) {
         msgEl.textContent = "Löysit kaikki parit, hienoa!";
