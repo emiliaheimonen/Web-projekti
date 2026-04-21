@@ -25,6 +25,10 @@ function startGame() {
     resetGameState();
     cards = getCardsByLevel(currentLevel);
     shuffleCards();
+
+    gridContainer.classList.remove("grid-easy", "grid-medium", "grid-hard");
+    gridContainer.classList.add(`grid-${currentLevel}`);
+
     generateCards();
 
     if (currentLevel === "hard") {
@@ -73,6 +77,8 @@ function shuffleCards() {
 }
 
 function generateCards() {
+    gridContainer.innerHTML = "";
+
     for (let card of cards) {
         const cardElement = document.createElement("div");
         cardElement.classList.add("card");
@@ -184,6 +190,8 @@ function showResult(score) {
     const msgEl = document.getElementById("result-message");
     const totalPairs = cards.length / 2;
 
+    const finalScore = Math.floor((score / totalPairs) * 10);
+
     if (score === totalPairs) {
         msgEl.textContent = "Löysit kaikki parit, hienoa!";
     } else if (score < Math.ceil(totalPairs / 2)) {
@@ -195,17 +203,6 @@ function showResult(score) {
     panel.classList.add("visible");
 }
 
-function restart () {
-    resetBoard();
-    shuffleCards();
-    score = 0;
-    matchedPairs = 0;
-    document.querySelector(".score").textContent = score;
-    gridContainer.innerHTML = "";
-
-    const panel = document.getElementById("result-panel");
-    if (panel) {
-        panel.classList.remove("visible")
-    }
-    generateCards();
+function restart() {
+    startGame();
 }
