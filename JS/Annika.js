@@ -6,9 +6,16 @@ const questions = [
       { image: "../Kuvat/Annika_kuvat/appelsiini.jpg", correct: false },
       { image: "../Kuvat/Annika_kuvat/banaani.jpg", correct: false }
     ]
-  }
+  }, 
+  {
+    question: "Missä on kissa?",
+    answers: [
+      { image: "../Kuvat/Annika_kuvat/koira.jpg", correct: false },
+      { image: "../Kuvat/Annika_kuvat/kala.jpg", correct: false },
+      { image: "../Kuvat/Annika_kuvat/cat.jpg", correct: true }
+    ]
+  } 
 ];
-
 let currentQuestion = 0;
 let score = 0;
 
