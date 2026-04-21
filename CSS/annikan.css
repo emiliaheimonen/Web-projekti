@@ -15,3 +15,18 @@
   gap: 20px;
   flex-wrap: wrap;
 }
+
+.quiz-box {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-home {
+  display: flex;
+  justify-content: center; /* Keskittää vaakasuunnassa */
+  align-items: center;     /* Keskittää pystysuunnassa */
+  min-height: 80vh;        /* Vie vähintään 80% näytön korkeudesta */
+  padding: 20px;
+}

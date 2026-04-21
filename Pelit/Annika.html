@@ -21,20 +21,14 @@
           <a href="../HTML/pisteet.html" class="nav-link">Pisteet</a>
 
           <div class="dropdown">
-            <a href="../HTML/pelit.html" class="dropdown-toggle">
-              Pelit
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="dropdown-arrow">
-                <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-              </svg>
-            </a>
-
+            <a href="../HTML/pelit.html" class="dropdown-toggle">Pelit</a>
             <div class="dropdown-menu">
-              <a href="../Pelit/Thanakan.html" class="dropdown-item">Sanaseikkailu</a>
-              <a href="../Pelit/Annika.html" class="dropdown-item">Yhdistä sana kuvaan</a>
-              <a href="../Pelit/Emilia.html" class="dropdown-item">Sanaluokkapeli</a>
-              <a href="../Pelit/Anastasiia.html" class="dropdown-item">Sanaristikko</a>
-              <a href="../Pelit/Kristiina.html" class="dropdown-item">Numero muistipeli</a>
-              <a href="../Pelit/Joonas.html" class="dropdown-item">Lajittele sanat</a>
+              <a href="../Pelit/Thanakan.html">Sanaseikkailu</a>
+              <a href="../Pelit/Annika.html">Yhdistä sana kuvaan</a>
+              <a href="../Pelit/Emilia.html">Sanaluokkapeli</a>
+              <a href="../Pelit/Anastasiia.html">Sanaristikko</a>
+              <a href="../Pelit/Kristiina.html">Numero muistipeli</a>
+              <a href="../Pelit/Joonas.html">Lajittele sanat</a>
             </div>
           </div>
         </nav>
@@ -44,9 +38,8 @@
     <main class="main-home">
       <div class="quiz-box">
         <h1>Yhdistä sana oikeaan kuvaan</h1>
-        <p>Valitse oikea kuva.</p>
 
-        <div id="question">Kysymys tulee tähän</div>
+        <div id="question"></div>
         <div id="answers" class="image-answers"></div>
         <div id="result"></div>
         <button id="nextBtn">Seuraava</button>
@@ -58,99 +51,7 @@
     </footer>
   </div>
 
-  <script>
-    const questions = [
-      {
-        question: "Missä on omena?",
-        answers: [
-          { image: "../Kuvat/Annikan_kuvat/omena.jpg", correct: true },
-          { image: "../Kuvat/Annikan_kuvat/paaryna.jpg", correct: false },
-          { image: "../Kuvat/Annikan_kuvat/banani.jpg", correct: false }
-        ]
-      }
-    ];
-
-    let currentQuestion = 0;
-    let score = 0;
-
-    const questionEl = document.getElementById("question");
-    const answersEl = document.getElementById("answers");
-    const resultEl = document.getElementById("result");
-    const nextBtn = document.getElementById("nextBtn");
-
-    function showQuestion() {
-      resultEl.textContent = "";
-      nextBtn.style.display = "none";
-      answersEl.innerHTML = "";
-
-      const q = questions[currentQuestion];
-      questionEl.textContent = q.question;
-
-      q.answers.forEach(answer => {
-        const button = document.createElement("button");
-        button.classList.add("image-button");
-        button.type = "button";
-
-        const img = document.createElement("img");
-        img.src = answer.image;
-        img.alt = "vastauskuva";
-
-        button.appendChild(img);
-        button.onclick = () => checkAnswer(answer, button);
-
-        answersEl.appendChild(button);
-      });
-    }
-
-    function checkAnswer(answer, clickedButton) {
-      const buttons = answersEl.querySelectorAll(".image-button");
-      const currentAnswers = questions[currentQuestion].answers;
-
-      buttons.forEach((button, index) => {
-        button.disabled = true;
-
-        if (currentAnswers[index].correct) {
-          button.classList.add("correct");
-        }
-      });
-
-      if (answer.correct) {
-        resultEl.textContent = "Hienoa! Oikein!";
-        score++;
-      } else {
-        clickedButton.classList.add("wrong");
-        resultEl.textContent = "Väärin!";
-      }
-
-      nextBtn.style.display = "inline-block";
-    }
-
-    nextBtn.addEventListener("click", () => {
-      currentQuestion++;
-
-      if (currentQuestion < questions.length) {
-        showQuestion();
-      } else {
-        questionEl.textContent = "Peli loppui!";
-        answersEl.innerHTML = "";
-        resultEl.textContent = "Sait " + score + " / " + questions.length + " oikein.";
-        nextBtn.style.display = "none";
-      }
-    });
-
-    showQuestion();
-  </script>
-
-  <script>
-    setInterval(() => {
-      const text = document.getElementById("result")?.textContent;
-      const match = text?.match(/\d+/);
-      const number = match ? parseInt(match[0]) : NaN;
-
-      if (!isNaN(number)) {
-        localStorage.setItem("yhdistaScore", number);
-      }
-    }, 500);
-  </script>
+  <!-- ULKOINEN JS -->
+  <script src="../JS/Annika.js"></script>
 </body>
 </html>
