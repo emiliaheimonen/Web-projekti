@@ -51,6 +51,14 @@
                         Harjoita numeroiden oppimista helpolla, kivalla muistipelillä.
                         Löydä numeroille 1 - 10 vastakohta englanniksi tai suomeksi.
                     </p>
+                    <div class="level-select">
+                      <label for="difficulty">Valitse taso:</label>
+                      <select id="difficulty" onchange="startgame()">
+                        <option value="easy">Helppo (1 - 4)</option>
+                        <option value="medium">Keskivaikea (5 - 9)</option>
+                        <option value="hard" selected>Vaikea (1 - 10)</option>
+                      </select>
+                    </div>
                     <div class="game-layout">
                         <button onclick="restart()">Aloita uudelleen</button>
                         <div class="game-area">

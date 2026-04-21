@@ -1,19 +1,63 @@
 const gridContainer = document.querySelector(".grid-container");
+let allCards = [];
 let cards = [];
-let firstCard, secondCard;
+let firstCard = null;
+let secondCard = null;
 let lockBoard = false;
 let score = 0;
 let matchedPairs = 0;
+let wrongGuesses = 0;
+let currentLevel = "hard";
 
 document.querySelector(".score").textContent = score;
 
 fetch("../JSON/NumeromuistipeliDATA.json")
     .then((res) => res.json())
     .then((data) => {
-        cards = data;
-        shuffleCards();
-        generateCards();
+        allCards = data;
+        startGame();
     });
+
+function startGame() {
+    const difficultySelect = document.getElementById("difficulty");
+    currentLevel = difficultySelect ? difficultySelect.valu : "hard";
+
+    resetGameState();
+    cards = getCardsByLevel(currentLevel);
+    shuffleCards();
+    generateCards();
+
+    if (currentLevel === "hard") {
+        showCardsAtStart();
+    }
+}
+
+function getCardsByLevel(level) {
+    if (level === "easy") {
+        return allCards.filter(card => ["1", "2", "3", "4"].includes(card.name));
+    }
+    if (level === "medium") {
+        return allCards.filter(card => ["5", "6", "7", "8", "9"].includes(card.name));
+    }
+
+    return [...allCards];
+}
+
+function resetGameState() {
+    firstCard = null;
+    secondCard = null;
+    lockBoard = false;
+    score = 0;
+    matchedPairs = 0;
+    wrongGuesses = 0;
+    document.querySelector(".score").textContent = score;
+    gridContainer.innerHTML = "";
+
+    const panel = document.getElementById("result-panel");
+    if (panel) {
+        panel.classList.remove("visible");
+    }
+}
 
 function shuffleCards() {
     let currentIndex = cards.length,
@@ -42,6 +86,17 @@ function generateCards() {
         gridContainer.appendChild(cardElement);
         cardElement.addEventListener("click", flipCard);
     }
+}
+
+function showCardsAtStart() {
+    const allCardElements = document.querySelectorAll(".card");
+    lockBoard = true;
+    allCardElements.forEach(card => card.classList.add("flipped"));
+
+    setTimeout(() => {
+        allCardElements.forEach(card => card.classList.remove("flippede"));
+        lockBoard = false;
+    }, 2500);
 }
 
 function flipCard() {
@@ -75,13 +130,33 @@ function checkForMatch() {
         }
         disableCards();
     } else {
-        if (score > 0) {
-            score--;
-        }
-        document.querySelector(".score").textContent = score;
+        handleWrongGuess();
         unflipCards();
     }
 }    
+
+function handleWrongGuess() {
+    if (currentLevel === "easy") {
+        return;
+    }
+
+    if (currentLevel === "medium") {
+        wrongGuesses++;
+
+        if (wrongGuesses % 2 === 0 && score > 0) {
+            score--;
+            document.querySelector(".score").textContent = score;
+        }
+        return;
+    }
+
+    if (currentLevel === "hard") {
+        if (score > 0) {
+            score--;
+            document.querySelector("score").textContent = score;
+        }
+    }
+}
 
 function disableCards() {
     firstCard.removeEventListener("click", flipCard);
@@ -104,16 +179,17 @@ function resetBoard() {
     lockBoard = false;
 }
 
-function showResult(score, totalPairs) {
+function showResult(score) {
     const panel = document.getElementById("result-panel");
     const msgEl = document.getElementById("result-message");
+    const totalPairs = cards.lenght / 2;
 
-    if (score === 10) {
+    if (score === totalPairs) {
         msgEl.textContent = "Löysit kaikki parit, hienoa!";
-    } else if (score < 5) {
-        msgEl.textContent = "Voi ei, yritä uudelleen!";
+    } else if (score < Math.ceil(totalPairs / 2)) {
+        msgEl.textContent = "Jatka harjoittelua pelaamalla uudestaan!";
     } else {
-        msgEl.textContent = "Hienosti, olit lähellä!";
+        msgEl.textContent = "Hienosti pelattu!";
     }
 
     panel.classList.add("visible");
