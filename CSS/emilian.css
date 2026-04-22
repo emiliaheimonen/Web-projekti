@@ -7,12 +7,12 @@
     text-align: center;
     padding: 3rem 2rem;
 
-    background: #ffffff;              /* valkoinen kortti */
-    border-radius: 1rem;              /* pehmeät kulmat */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* kevyt varjo */
-    max-width: 600px;                 /* ettei leviä liikaa */
+    background: #ffffff;             
+    border-radius: 1rem;             
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
+    max-width: 600px;               
     box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-    background: #f1a2bf; /* vaalea pinkki */
+    background: #f1a2bf; 
     border-radius: 2rem;
 }
 
@@ -42,7 +42,7 @@
     max-width: 40rem;
     margin: 0 auto 2rem auto;
     text-align: center;
-    color: #555;
+    color: #000000;
     font-size: 1.1rem;
     line-height: 1.6;
 }
