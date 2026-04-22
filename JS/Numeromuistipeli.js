@@ -131,7 +131,7 @@ function checkForMatch() {
         document.querySelector(".score").textContent = score;
         const totalPairs = cards.length / 2;
 
-        if (matchedPairs == totalPairs) {
+        if (matchedPairs === totalPairs) {
             showResult(score);
         }
         disableCards();
@@ -191,6 +191,11 @@ function showResult(score) {
     const totalPairs = cards.length / 2;
 
     const finalScore = Math.floor((score / totalPairs) * 10);
+    const oldScore = Number(localStorage.getItem("muistipeliScore")) || 0;
+
+    if (finalScore > oldScore) {
+        localStorage.setItem("muistipeliScore", finalScore);
+    }
 
     if (score === totalPairs) {
         msgEl.textContent = "Löysit kaikki parit, hienoa!";
