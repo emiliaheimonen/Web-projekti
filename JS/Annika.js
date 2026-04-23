@@ -2,20 +2,29 @@ const questions = [
   {
     question: "Missä on omena?",
     answers: [
-      { image: "../Kuvat/Annika_kuvat/omena.jpg", correct: true },
-      { image: "../Kuvat/Annika_kuvat/appelsiini.jpg", correct: false },
-      { image: "../Kuvat/Annika_kuvat/banaani.jpg", correct: false }
+      { image: "../Kuvat/Annika_kuvat/omena1.jpg", correct: true },
+      { image: "../Kuvat/Annika_kuvat/appelsiini1.jpg", correct: false },
+      { image: "../Kuvat/Annika_kuvat/banaani1.jpg", correct: false }
     ]
   }, 
   {
     question: "Missä on kissa?",
     answers: [
-      { image: "../Kuvat/Annika_kuvat/koira.jpg", correct: false },
+      { image: "../Kuvat/Annika_kuvat/koira1.jpg", correct: false },
       { image: "../Kuvat/Annika_kuvat/kala.jpg", correct: false },
       { image: "../Kuvat/Annika_kuvat/cat.jpg", correct: true }
     ]
+  }, 
+  {
+    question: "Missä on violetti kukka?",
+    answers: [
+      { image: "../Kuvat/Annika_kuvat/punainen.jpg", correct: false },
+      { image: "../Kuvat/Annika_kuvat/pinkki.jpg", correct: false },
+      { image: "../Kuvat/Annika_kuvat/violetti.jpg", correct: true }
+    ]
   } 
 ];
+
 let currentQuestion = 0;
 let score = 0;
 

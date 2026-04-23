@@ -1,5 +1,3 @@
-  /*kuvien muokkaus koodit */
-
 .image-button img {
   width: 100%;
   max-width: 200px;   
@@ -7,7 +5,7 @@
   object-fit: cover;  
   border-radius: 10px;
 }
-  /* asettaa kuvat keskelle */
+
 
 .image-answers {
   display: flex;
@@ -25,8 +23,8 @@
 
 .main-home {
   display: flex;
-  justify-content: center; /* Keskittää vaakasuunnassa */
-  align-items: center;     /* Keskittää pystysuunnassa */
-  min-height: 80vh;        /* Vie vähintään 80% näytön korkeudesta */
+  justify-content: center; 
+  align-items: center;     
+  min-height: 80vh;        
   padding: 20px;
 }
