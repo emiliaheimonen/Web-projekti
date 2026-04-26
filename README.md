@@ -2,10 +2,15 @@
 
 Tiimin jäsenet:
 Kristiina Karvonen/Github käyttäjä: kkarvone19
+
 Thanakan Paneeyachot/Github käyttäjä: thanakanp
+
 Annika Huovinen/Github käyttäjä: annikahuovinen
+
 Emilia Heimonen/Github käyttäjä: emiliaheimonen
+
 Joonas Tuulaniemi/Github käyttäjä: Zulvey
+
 Anastasiia Flikova/Github käyttäjä: anastasiiaflikova27-lang
 
 / Kristiina lähteet: Tehtävässä hyödynnetty netistä löytyvää tietoja sivuilta stackoverflow.com, w3schools.com, github.com ja youtube.com. ChatGPT.com käytetty kirjoitusvirheiden etsinnässä, ja koodin rakenteen korjauksissa ja muotoilussa. Kuva otettu sivulta flaticon.com.
@@ -24,4 +29,5 @@ Kukka pinkki: https://fi.pinterest.com/pin/1266706141308844/
 Kukka punainen: https://fi.pinterest.com/pin/125889752078761261/
 
 / Thanakan lähteet: Projektin toteutuksessa on hyödynnetty OpenAI:n ChatGPT-työkalua koodin oppimisen ja rakenteen suunnittelun tukena. Kaikki varsinainen toteutus ja sisältö on kuitenkin tehty itsenäisesti.
+
 Pelissä käytetyt kuvat on ladattu sivustolta Freepik (https://www.freepik.com), ja ne ovat käytössä sivuston tarjoaman ilmaisen lisenssin mukaisesti.
