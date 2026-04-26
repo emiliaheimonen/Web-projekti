@@ -22,3 +22,6 @@ Appelsiini kuva: https://fi.pinterest.com/pin/92394229852762015/
 Kukka violetti: https://fi.pinterest.com/pin/28147566418679440/
 Kukka pinkki: https://fi.pinterest.com/pin/1266706141308844/
 Kukka punainen: https://fi.pinterest.com/pin/125889752078761261/
+
+/ Thanakan lähteet: Projektin toteutuksessa on hyödynnetty OpenAI:n ChatGPT-työkalua koodin oppimisen ja rakenteen suunnittelun tukena. Kaikki varsinainen toteutus ja sisältö on kuitenkin tehty itsenäisesti.
+Pelissä käytetyt kuvat on ladattu sivustolta Freepik (https://www.freepik.com), ja ne ovat käytössä sivuston tarjoaman ilmaisen lisenssin mukaisesti.
