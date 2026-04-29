@@ -1,4 +1,4 @@
-cat > JS/Anastasiia.js <<'EOF'
+
 document.addEventListener("DOMContentLoaded", () => {
   const STORAGE_KEY = "sanaristikkoScore";
 
@@ -329,4 +329,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderPuzzle();
 });
-EOF
