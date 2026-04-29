@@ -9,81 +9,79 @@
 </head>
 <body>
     <header class="header">
-      <div class="header-inner">
-        <a href="../HTML/index.html" class="logo">
-          <img src="../Kuvat/logo.png" alt="Logo">
-        </a>
-
-        <nav class="nav">
-          <a href="../HTML/index.html" class="nav-link">Etusivu</a>
-          <a href="../HTML/info.html" class="nav-link">Info</a>
-          <a href="../HTML/pisteet.html" class="nav-link">Pisteet</a>
-
-          <div class="dropdown">
-            <a href="../HTML/pelit.html" class="dropdown-toggle">
-              Pelit
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="dropdown-arrow">
-                <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-              </svg>
+        <div class="header-inner">
+            <a href="../HTML/index.html" class="logo">
+                <img src="../Kuvat/logo.png" alt="Logo">
             </a>
 
-            <div class="dropdown-menu">
-              <a href="../Pelit/Thanakan.html" class="dropdown-item">Sanaseikkailu</a>
-              <a href="../Pelit/Annika.html" class="dropdown-item">Yhdistä sana kuvaan</a>
-              <a href="../Pelit/Emilia.html" class="dropdown-item">Sanaluokkapeli</a>
-              <a href="../Pelit/Anastasiia.html" class="dropdown-item">Sanaristikko</a>
-              <a href="../Pelit/Kristiina.html" class="dropdown-item">Numero muistipeli</a>
-              <a href="../Pelit/Joonas.html" class="dropdown-item">Lajittele sanat</a>
-            </div>
-          </div>
-        </nav>
-      </div>
+            <nav class="nav">
+                <a href="../HTML/index.html" class="nav-link">Etusivu</a>
+                <a href="../HTML/info.html" class="nav-link">Info</a>
+                <a href="../HTML/pisteet.html" class="nav-link">Pisteet</a>
+
+                <div class="dropdown">
+                    <a href="../HTML/pelit.html" class="dropdown-toggle">
+                        Pelit
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="dropdown-arrow">
+                            <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+
+                    <div class="dropdown-menu">
+                        <a href="../Pelit/Thanakan.html" class="dropdown-item">Sanaseikkailu</a>
+                        <a href="../Pelit/Annika.html" class="dropdown-item">Yhdistä sana kuvaan</a>
+                        <a href="../Pelit/Emilia.html" class="dropdown-item">Sanaluokkapeli</a>
+                        <a href="../Pelit/Anastasiia.html" class="dropdown-item">Sanaristikko</a>
+                        <a href="../Pelit/Kristiina.html" class="dropdown-item">Numero muistipeli</a>
+                        <a href="../Pelit/Joonas.html" class="dropdown-item">Lajittele sanat</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <div class="sanaristikko-container">
-      <h1 class="sanaristikko-otsikko">Sanaristikko</h1>
+    <main class="sanaristikko-container">
+        <section class="sanaristikko-alku">
+            <h1 class="sanaristikko-otsikko">Sanaristikko</h1>
+            <p class="pelikuvaus-sanaristikko">Täytä sanat vihjeiden avulla. Voit tarkistaa vastaukset, tyhjentää ruudukon tai aloittaa uuden ristikon.</p>
+        </section>
 
-      <p class="pelikuvaus-sanaristikko">
-        Täytä sanaristikko vihjeiden perusteella. Paina <strong>Uusi peli</strong>, jos haluat seuraavan ristikon.
-      </p>
-
-      <div class="sanaristikko-buttons">
-        <button id="new-game-btn" class="toiminto-nappi">Uusi peli</button>
-        <button id="check-btn" class="toiminto-nappi">Tarkista</button>
-        <button id="show-btn" class="toiminto-nappi">Näytä vastaukset</button>
-        <button id="clear-btn" class="toiminto-nappi">Tyhjennä</button>
-      </div>
-
-      <div class="sanaristikko-content">
-        <div class="ristikko-wrapper">
-          <div id="puzzle-title" class="puzzle-title"></div>
-          <div class="ristikko" id="crossword-grid"></div>
+        <div class="sanaristikko-buttons">
+            <button id="new-game-btn" class="toiminto-nappi">Uusi peli</button>
+            <button id="check-btn" class="toiminto-nappi">Tarkista</button>
+            <button id="show-btn" class="toiminto-nappi">Näytä vastaukset</button>
+            <button id="clear-btn" class="toiminto-nappi">Tyhjennä</button>
         </div>
 
-        <div class="vihjeet">
-          <h2>Vihjeet</h2>
+        <section class="sanaristikko-content">
+            <div class="ristikko-wrapper">
+                <div id="puzzle-title" class="puzzle-title"></div>
+                <div class="ristikko" id="crossword-grid"></div>
+            </div>
 
-          <div class="vihje-ryhma">
-            <h3>Vaakasuoraan</h3>
-            <div id="across-clues"></div>
-          </div>
+            <aside class="vihjeet">
+                <h2>Vihjeet</h2>
 
-          <div class="vihje-ryhma">
-            <h3>Pystysuoraan</h3>
-            <div id="down-clues"></div>
-          </div>
+                <div class="vihje-ryhma">
+                    <h3>Vaakasuoraan</h3>
+                    <div id="across-clues"></div>
+                </div>
 
-          <p id="palaute" class="palaute"></p>
-          <p id="pisteet" class="pisteet">Pisteet: 0</p>
-        </div>
-      </div>
-    </div>
+                <div class="vihje-ryhma">
+                    <h3>Pystysuoraan</h3>
+                    <div id="down-clues"></div>
+                </div>
+
+                <p id="palaute" class="palaute"></p>
+                <p id="pisteet" class="pisteet">Pisteet: 0 / 10</p>
+            </aside>
+        </section>
+    </main>
 
     <footer class="footer">
-      <p>TIK25SP Web-projekti</p>
+        <p>TIK25SP Web-projekti</p>
     </footer>
 
     <script src="../JS/Anastasiia.js"></script>
-
 </body>
 </html>
