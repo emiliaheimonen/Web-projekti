@@ -1,28 +1,23 @@
 .sanaristikko-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 2rem auto;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
     text-align: center;
-    padding: 3rem 2rem;
-    background: #f1a2bf;
-    border-radius: 2rem;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-    max-width: 1250px;
+}
+
+.sanaristikko-alku {
+    max-width: 760px;
+    margin: 0 auto 1.8rem;
 }
 
 .sanaristikko-otsikko {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin: 0 0 1rem;
 }
 
 .pelikuvaus-sanaristikko {
-    max-width: 45rem;
-    margin: 0 auto 2rem auto;
-    text-align: center;
-    color: #555;
-    font-size: 1.1rem;
+    margin: 0;
+    color: #444;
+    font-size: 1.05rem;
     line-height: 1.6;
 }
 
@@ -30,34 +25,30 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
+    gap: 0.8rem;
     margin-bottom: 2rem;
 }
 
 .toiminto-nappi {
-    background-color: #b5738b;
-    color: white;
-    border: none;
-    padding: 12px 22px;
+    padding: 0.75rem 1.25rem;
+    color: #fff;
     font-size: 1rem;
-    border-radius: 8px;
+    font-weight: 600;
+    background-color: #c6729b;
+    border: none;
+    border-radius: 0.75rem;
     cursor: pointer;
-    margin: 0.2rem;
-    transition: background-color 0.2s, transform 0.1s;
 }
 
 .toiminto-nappi:hover {
-    background-color: #a0627a;
-    transform: translateY(-2px);
+    background-color: #b45f8b;
 }
 
 .sanaristikko-content {
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
     justify-content: center;
     align-items: flex-start;
-    width: 100%;
+    gap: 2rem;
 }
 
 .ristikko-wrapper {
@@ -68,131 +59,115 @@
 
 .puzzle-title {
     margin-bottom: 1rem;
-    font-weight: bold;
-    color: #7a2e49;
+    color: #333;
     font-size: 1.1rem;
+    font-weight: 700;
 }
 
 .ristikko {
+    --cell-size: 44px;
     display: grid;
-    grid-template-columns: repeat(11, 46px);
-    grid-template-rows: repeat(11, 46px);
+    grid-template-columns: repeat(var(--grid-size), var(--cell-size));
+    grid-template-rows: repeat(var(--grid-size), var(--cell-size));
     gap: 2px;
-    background-color: #d1d5db;
-    padding: 8px;
-    border-radius: 14px;
+    padding: 0.5rem;
+    background-color: #d7d7d7;
+    border-radius: 0.9rem;
 }
 
 .ruutu {
-    width: 46px;
-    height: 46px;
     position: relative;
-    background-color: #1f2937;
-    border-radius: 4px;
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background-color: #263241;
+    border-radius: 0.25rem;
 }
 
 .ruutu.valkoinen {
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 .ruutu input {
     width: 100%;
     height: 100%;
-    border: none;
-    background: transparent;
+    padding-top: 0.35rem;
+    color: #222;
+    font-size: 1.15rem;
+    font-weight: 700;
     text-align: center;
-    font-size: 1.25rem;
     text-transform: uppercase;
+    background: transparent;
+    border: none;
     outline: none;
-    color: #333;
-    font-weight: 600;
+}
+
+.ruutu input:focus {
+    box-shadow: inset 0 0 0 2px #c6729b;
 }
 
 .ruutu-numero {
     position: absolute;
-    top: 2px;
-    left: 4px;
-    font-size: 0.68rem;
-    color: #666;
-    font-weight: bold;
+    top: 0.2rem;
+    left: 0.25rem;
+    color: #555;
+    font-size: 0.65rem;
+    font-weight: 700;
+    line-height: 1;
     pointer-events: none;
 }
 
 .vihjeet {
-    background: #ffffff;
-    padding: 1.6rem;
-    border-radius: 1.5rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    max-width: 350px;
+    width: 100%;
+    max-width: 330px;
+    padding: 1.5rem;
     text-align: left;
+    background-color: #fff;
+    border-radius: 1.2rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 }
 
 .vihjeet h2 {
-    margin-bottom: 1rem;
+    margin: 0 0 1rem;
 }
 
 .vihje-ryhma {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.3rem;
 }
 
 .vihje-ryhma h3 {
-    margin-bottom: 0.7rem;
+    margin: 0 0 0.65rem;
+    font-size: 1.05rem;
 }
 
 .clue-item {
-    margin-bottom: 0.6rem;
-    line-height: 1.5;
+    margin-bottom: 0.5rem;
     color: #444;
+    line-height: 1.45;
 }
 
-.palaute {
-    font-weight: bold;
-    margin-top: 1rem;
-    color: #7a2e49;
-    min-height: 24px;
-}
-
+.palaute,
 .pisteet {
-    font-weight: bold;
-    margin-top: 0.8rem;
-    color: #7a2e49;
+    margin: 0.8rem 0 0;
+    color: #333;
+    font-weight: 700;
 }
 
 .oikein {
-    background-color: #c8f7c5 !important;
+    background-color: #c9f1c9 !important;
 }
 
 .vaarin {
-    background-color: #f8c4c4 !important;
+    background-color: #f5bcbc !important;
 }
 
 @media (max-width: 900px) {
-    .main-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .otsikko {
-        max-width: 100%;
-    }
-
-    .etusivu_kuva {
-        margin-top: 30px;
-    }
-
     .sanaristikko-content {
         flex-direction: column;
         align-items: center;
     }
 
     .ristikko {
-        grid-template-columns: repeat(11, 32px);
-        grid-template-rows: repeat(11, 32px);
-    }
-
-    .ruutu {
-        width: 32px;
-        height: 32px;
+        --cell-size: 34px;
     }
 
     .ruutu input {
@@ -200,25 +175,23 @@
     }
 
     .vihjeet {
-        width: 100%;
         max-width: 520px;
     }
 }
 
-.right-arrow {
-    width: 2rem;
-    height: 2rem;
-}
+@media (max-width: 480px) {
+    .sanaristikko-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 
-.corner-image {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: min(820px, 56vw);
-    height: auto;
-    max-width: none;
-    pointer-events: none;
-    user-select: none;
-    display: block;
-    z-index: 0;
+    .ristikko {
+        --cell-size: 29px;
+        padding: 0.35rem;
+    }
+
+    .toiminto-nappi {
+        width: 100%;
+        max-width: 260px;
+    }
 }
