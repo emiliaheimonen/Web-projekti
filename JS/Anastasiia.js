@@ -1,37 +1,33 @@
+cat > JS/Anastasiia.js <<'EOF'
 document.addEventListener("DOMContentLoaded", () => {
   const STORAGE_KEY = "sanaristikkoScore";
 
   const puzzles = [
     {
       title: "Ristikko 1",
-      size: 11,
+      size: 10,
       words: [
-        { number: 1, word: "KOTI", clue: "Paikka, jossa asutaan", row: 0, col: 4, direction: "across" },
-        { number: 2, word: "KALA", clue: "Eläin, joka elää vedessä", row: 0, col: 4, direction: "down" },
-        { number: 3, word: "ILTA", clue: "Päivän loppupuoli", row: 1, col: 1, direction: "across" },
-        { number: 4, word: "LOMA", clue: "Vapaa-aika koulusta tai työstä", row: 2, col: 4, direction: "across" },
-        { number: 5, word: "AAMU", clue: "Päivän alku", row: 2, col: 7, direction: "down" },
-        { number: 6, word: "AUTO", clue: "Sillä voi ajaa", row: 4, col: 5, direction: "down" },
-        { number: 7, word: "KOULU", clue: "Paikka, jossa opiskellaan", row: 5, col: 3, direction: "across" },
-        { number: 8, word: "KIRJA", clue: "Siinä on sivuja", row: 5, col: 3, direction: "down" },
-        { number: 9, word: "VESI", clue: "Sitä juodaan", row: 6, col: 0, direction: "across" },
-        { number: 10, word: "TALO", clue: "Rakennus, jossa voi asua", row: 9, col: 2, direction: "across" }
+        { number: 1, word: "KOTI", clue: "Paikka, jossa asutaan", row: 0, col: 3, direction: "across" },
+        { number: 2, word: "KALA", clue: "Eläin, joka elää vedessä", row: 0, col: 3, direction: "down" },
+        { number: 3, word: "AUTO", clue: "Sillä voi ajaa", row: 1, col: 3, direction: "across" },
+        { number: 4, word: "TALO", clue: "Rakennus, jossa voi asua", row: 1, col: 5, direction: "down" },
+        { number: 5, word: "KALA", clue: "Elää vedessä", row: 3, col: 3, direction: "across" },
+        { number: 6, word: "OMA", clue: "Ei toisen", row: 4, col: 5, direction: "down" },
+        { number: 7, word: "AAMU", clue: "Päivän alku", row: 5, col: 3, direction: "across" }
       ]
     },
     {
       title: "Ristikko 2",
-      size: 11,
+      size: 10,
       words: [
-        { number: 1, word: "SANA", clue: "Kielen pieni osa", row: 0, col: 3, direction: "across" },
-        { number: 2, word: "AAMU", clue: "Päivän alku", row: 0, col: 4, direction: "down" },
-        { number: 3, word: "MUKI", clue: "Siitä voi juoda", row: 2, col: 2, direction: "across" },
-        { number: 4, word: "KIRJA", clue: "Siinä on sivuja", row: 2, col: 4, direction: "down" },
-        { number: 5, word: "JUNA", clue: "Kulkee raiteilla", row: 5, col: 4, direction: "across" },
-        { number: 6, word: "AUTO", clue: "Sillä voi ajaa", row: 5, col: 7, direction: "down" },
-        { number: 7, word: "TALO", clue: "Rakennus, jossa voi asua", row: 8, col: 5, direction: "across" },
-        { number: 8, word: "OMA", clue: "Ei toisen", row: 6, col: 8, direction: "down" },
-        { number: 9, word: "VESI", clue: "Sitä juodaan", row: 10, col: 1, direction: "across" },
-        { number: 10, word: "KALA", clue: "Eläin, joka elää vedessä", row: 7, col: 1, direction: "down" }
+        { number: 1, word: "SANA", clue: "Kielen osa", row: 0, col: 2, direction: "across" },
+        { number: 2, word: "AAMU", clue: "Päivän alku", row: 0, col: 3, direction: "down" },
+        { number: 3, word: "LOMA", clue: "Vapaa-aika koulusta tai työstä", row: 2, col: 0, direction: "across" },
+        { number: 4, word: "AUTO", clue: "Sillä voi ajaa", row: 2, col: 3, direction: "down" },
+        { number: 5, word: "TIE", clue: "Auto kulkee sitä pitkin", row: 4, col: 3, direction: "across" },
+        { number: 6, word: "KIRJA", clue: "Siinä on sivuja", row: 6, col: 2, direction: "across" },
+        { number: 7, word: "JUNA", clue: "Kulkee raiteilla", row: 6, col: 5, direction: "down" },
+        { number: 8, word: "ALA", clue: "Opiskelun tai työn alue", row: 9, col: 5, direction: "across" }
       ]
     }
   ];
@@ -57,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return Array.from({ length: size }, () =>
       Array.from({ length: size }, () => ({
         letter: "",
-        numbers: [],
+        number: "",
         active: false
       }))
     );
@@ -72,22 +68,21 @@ document.addEventListener("DOMContentLoaded", () => {
       for (let i = 0; i < word.length; i++) {
         const row = item.direction === "down" ? item.row + i : item.row;
         const col = item.direction === "across" ? item.col + i : item.col;
+        const letter = word[i];
 
         if (row >= puzzle.size || col >= puzzle.size) {
-          console.error(`Sana ${item.word} ei mahdu ruudukkoon.`);
-          continue;
+          return;
         }
 
-        if (board[row][col].letter && board[row][col].letter !== word[i]) {
-          console.error(`Kirjainristiriita sanassa ${item.word}.`);
-          continue;
+        if (board[row][col].letter && board[row][col].letter !== letter) {
+          return;
         }
 
-        board[row][col].letter = word[i];
+        board[row][col].letter = letter;
         board[row][col].active = true;
 
         if (i === 0) {
-          board[row][col].numbers.push(item.number);
+          board[row][col].number = item.number;
         }
       }
     });
@@ -117,10 +112,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (cellData.active) {
           cell.classList.add("valkoinen");
 
-          if (cellData.numbers.length > 0) {
+          if (cellData.number) {
             const number = document.createElement("span");
             number.className = "ruutu-numero";
-            number.textContent = cellData.numbers.join("/");
+            number.textContent = cellData.number;
             cell.appendChild(number);
           }
 
@@ -132,20 +127,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
           input.addEventListener("input", () => {
             input.value = input.value.toUpperCase().replace(/[^A-ZÅÄÖ]/g, "");
-
             cell.classList.remove("oikein", "vaarin");
             feedbackElement.textContent = "";
 
             if (input.value) {
               const nextInput = getNextInput(input);
-              if (nextInput) {
-                nextInput.focus();
-              }
+              if (nextInput) nextInput.focus();
             }
           });
 
           input.addEventListener("keydown", (event) => handleKeys(event, input));
-
           cell.appendChild(input);
         }
 
@@ -337,3 +328,5 @@ document.addEventListener("DOMContentLoaded", () => {
   clearButton.addEventListener("click", clearPuzzle);
 
   renderPuzzle();
+});
+EOF
