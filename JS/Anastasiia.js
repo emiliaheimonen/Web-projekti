@@ -4,49 +4,40 @@ document.addEventListener("DOMContentLoaded", () => {
   const puzzles = [
     {
       title: "Ristikko 1",
-      size: 10,
+      size: 11,
       words: [
-        { number: 1, word: "KESÄ", clue: "Lämmin vuodenaika", row: 1, col: 2, direction: "across" },
-        { number: 2, word: "KOTI", clue: "Paikka, jossa asutaan", row: 1, col: 2, direction: "down" },
-        { number: 3, word: "TALO", clue: "Rakennus, jossa voi asua", row: 3, col: 2, direction: "across" },
-        { number: 4, word: "LOMA", clue: "Vapaa-aika koulusta tai työstä", row: 3, col: 4, direction: "down" },
-        { number: 5, word: "OMA", clue: "Ei toisen", row: 4, col: 4, direction: "across" },
-        { number: 6, word: "AAMU", clue: "Päivän alku", row: 6, col: 4, direction: "across" },
-        { number: 7, word: "MUKI", clue: "Siitä voi juoda", row: 6, col: 6, direction: "down" },
-        { number: 8, word: "KALA", clue: "Eläin, joka elää vedessä", row: 8, col: 6, direction: "across" }
+        { number: 1, word: "KOTI", clue: "Paikka, jossa asutaan", row: 0, col: 4, direction: "across" },
+        { number: 2, word: "KALA", clue: "Eläin, joka elää vedessä", row: 0, col: 4, direction: "down" },
+        { number: 3, word: "ILTA", clue: "Päivän loppupuoli", row: 1, col: 1, direction: "across" },
+        { number: 4, word: "LOMA", clue: "Vapaa-aika koulusta tai työstä", row: 2, col: 4, direction: "across" },
+        { number: 5, word: "AAMU", clue: "Päivän alku", row: 2, col: 7, direction: "down" },
+        { number: 6, word: "AUTO", clue: "Sillä voi ajaa", row: 4, col: 5, direction: "down" },
+        { number: 7, word: "KOULU", clue: "Paikka, jossa opiskellaan", row: 5, col: 3, direction: "across" },
+        { number: 8, word: "KIRJA", clue: "Siinä on sivuja", row: 5, col: 3, direction: "down" },
+        { number: 9, word: "VESI", clue: "Sitä juodaan", row: 6, col: 0, direction: "across" },
+        { number: 10, word: "TALO", clue: "Rakennus, jossa voi asua", row: 9, col: 2, direction: "across" }
       ]
     },
     {
       title: "Ristikko 2",
-      size: 10,
-      words: [
-        { number: 1, word: "KOULU", clue: "Paikka, jossa opiskellaan", row: 1, col: 2, direction: "across" },
-        { number: 2, word: "ULOS", clue: "Ei sisälle", row: 1, col: 4, direction: "down" },
-        { number: 3, word: "LOMA", clue: "Vapaa-aika koulusta", row: 2, col: 4, direction: "across" },
-        { number: 4, word: "AUTO", clue: "Sillä voi ajaa", row: 2, col: 7, direction: "down" },
-        { number: 5, word: "SIVU", clue: "Kirjassa on monta tällaista", row: 3, col: 1, direction: "across" },
-        { number: 6, word: "SATO", clue: "Pellolta saadaan tämä", row: 4, col: 4, direction: "across" },
-        { number: 7, word: "TIE", clue: "Auto kulkee sitä pitkin", row: 4, col: 6, direction: "down" }
-      ]
-    },
-    {
-      title: "Ristikko 3",
       size: 11,
       words: [
-        { number: 1, word: "KIRJA", clue: "Siinä on sivuja", row: 1, col: 2, direction: "across" },
-        { number: 2, word: "ILTA", clue: "Päivän loppupuoli", row: 1, col: 3, direction: "down" },
-        { number: 3, word: "TALO", clue: "Rakennus, jossa voi asua", row: 3, col: 3, direction: "across" },
-        { number: 4, word: "AAMU", clue: "Päivän alku", row: 3, col: 4, direction: "down" },
-        { number: 5, word: "MAITO", clue: "Valkoinen juoma", row: 5, col: 4, direction: "across" },
-        { number: 6, word: "OMA", clue: "Ei toisen", row: 5, col: 8, direction: "down" },
-        { number: 7, word: "SANA", clue: "Kielen osa", row: 7, col: 5, direction: "across" },
-        { number: 8, word: "NENÄ", clue: "Se on kasvoissa", row: 7, col: 7, direction: "down" }
+        { number: 1, word: "SANA", clue: "Kielen pieni osa", row: 0, col: 3, direction: "across" },
+        { number: 2, word: "AAMU", clue: "Päivän alku", row: 0, col: 4, direction: "down" },
+        { number: 3, word: "MUKI", clue: "Siitä voi juoda", row: 2, col: 2, direction: "across" },
+        { number: 4, word: "KIRJA", clue: "Siinä on sivuja", row: 2, col: 4, direction: "down" },
+        { number: 5, word: "JUNA", clue: "Kulkee raiteilla", row: 5, col: 4, direction: "across" },
+        { number: 6, word: "AUTO", clue: "Sillä voi ajaa", row: 5, col: 7, direction: "down" },
+        { number: 7, word: "TALO", clue: "Rakennus, jossa voi asua", row: 8, col: 5, direction: "across" },
+        { number: 8, word: "OMA", clue: "Ei toisen", row: 6, col: 8, direction: "down" },
+        { number: 9, word: "VESI", clue: "Sitä juodaan", row: 10, col: 1, direction: "across" },
+        { number: 10, word: "KALA", clue: "Eläin, joka elää vedessä", row: 7, col: 1, direction: "down" }
       ]
     }
   ];
 
   let currentPuzzleIndex = 0;
-  let currentPuzzle = puzzles[currentPuzzleIndex];
+  let puzzle = puzzles[currentPuzzleIndex];
   let board = [];
   let activeDirection = "across";
 
@@ -62,76 +53,63 @@ document.addEventListener("DOMContentLoaded", () => {
   const showButton = document.getElementById("show-btn");
   const clearButton = document.getElementById("clear-btn");
 
-  function createEmptyBoard(size) {
+  function createBoard(size) {
     return Array.from({ length: size }, () =>
       Array.from({ length: size }, () => ({
         letter: "",
-        number: "",
-        active: false,
-        words: []
+        numbers: [],
+        active: false
       }))
     );
   }
 
-  function validatePuzzle(puzzle) {
-    puzzle.words.forEach((item) => {
-      const cleanWord = item.word.toUpperCase();
-      const endRow = item.direction === "down" ? item.row + cleanWord.length - 1 : item.row;
-      const endCol = item.direction === "across" ? item.col + cleanWord.length - 1 : item.col;
-
-      if (item.row < 0 || item.col < 0 || endRow >= puzzle.size || endCol >= puzzle.size) {
-        throw new Error(`Sana "${item.word}" ei mahdu ruudukkoon.`);
-      }
-    });
-  }
-
-  function buildBoard(puzzle) {
-    validatePuzzle(puzzle);
-
-    const newBoard = createEmptyBoard(puzzle.size);
+  function buildBoard() {
+    board = createBoard(puzzle.size);
 
     puzzle.words.forEach((item) => {
-      const cleanWord = item.word.toUpperCase();
+      const word = item.word.toUpperCase();
 
-      for (let i = 0; i < cleanWord.length; i++) {
+      for (let i = 0; i < word.length; i++) {
         const row = item.direction === "down" ? item.row + i : item.row;
         const col = item.direction === "across" ? item.col + i : item.col;
-        const letter = cleanWord[i];
 
-        if (newBoard[row][col].letter && newBoard[row][col].letter !== letter) {
-          throw new Error(`Ristikossa on kirjainristiriita sanassa "${item.word}".`);
+        if (row >= puzzle.size || col >= puzzle.size) {
+          console.error(`Sana ${item.word} ei mahdu ruudukkoon.`);
+          continue;
         }
 
-        newBoard[row][col].letter = letter;
-        newBoard[row][col].active = true;
-        newBoard[row][col].words.push(item.number);
+        if (board[row][col].letter && board[row][col].letter !== word[i]) {
+          console.error(`Kirjainristiriita sanassa ${item.word}.`);
+          continue;
+        }
+
+        board[row][col].letter = word[i];
+        board[row][col].active = true;
 
         if (i === 0) {
-          newBoard[row][col].number = item.number;
+          board[row][col].numbers.push(item.number);
         }
       }
     });
-
-    return newBoard;
   }
 
   function renderPuzzle() {
-    currentPuzzle = puzzles[currentPuzzleIndex];
-    board = buildBoard(currentPuzzle);
+    puzzle = puzzles[currentPuzzleIndex];
+    buildBoard();
 
     gridElement.innerHTML = "";
     acrossCluesElement.innerHTML = "";
     downCluesElement.innerHTML = "";
     feedbackElement.textContent = "";
 
-    titleElement.textContent = currentPuzzle.title;
-    scoreElement.textContent = `Pisteet: 0 / ${currentPuzzle.words.length}`;
+    titleElement.textContent = puzzle.title;
+    scoreElement.textContent = `Pisteet: 0 / ${puzzle.words.length}`;
 
-    gridElement.style.gridTemplateColumns = `repeat(${currentPuzzle.size}, 42px)`;
-    gridElement.style.gridTemplateRows = `repeat(${currentPuzzle.size}, 42px)`;
+    gridElement.style.gridTemplateColumns = `repeat(${puzzle.size}, 40px)`;
+    gridElement.style.gridTemplateRows = `repeat(${puzzle.size}, 40px)`;
 
-    for (let row = 0; row < currentPuzzle.size; row++) {
-      for (let col = 0; col < currentPuzzle.size; col++) {
+    for (let row = 0; row < puzzle.size; row++) {
+      for (let col = 0; col < puzzle.size; col++) {
         const cellData = board[row][col];
         const cell = document.createElement("div");
         cell.className = "ruutu";
@@ -139,11 +117,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (cellData.active) {
           cell.classList.add("valkoinen");
 
-          if (cellData.number) {
-            const numberElement = document.createElement("span");
-            numberElement.className = "ruutu-numero";
-            numberElement.textContent = cellData.number;
-            cell.appendChild(numberElement);
+          if (cellData.numbers.length > 0) {
+            const number = document.createElement("span");
+            number.className = "ruutu-numero";
+            number.textContent = cellData.numbers.join("/");
+            cell.appendChild(number);
           }
 
           const input = document.createElement("input");
@@ -152,11 +130,21 @@ document.addEventListener("DOMContentLoaded", () => {
           input.dataset.col = col;
           input.dataset.answer = cellData.letter;
 
-          input.addEventListener("input", () => handleInput(input));
-          input.addEventListener("keydown", (event) => handleKeydown(event, input));
-          input.addEventListener("focus", () => {
+          input.addEventListener("input", () => {
+            input.value = input.value.toUpperCase().replace(/[^A-ZÅÄÖ]/g, "");
+
             cell.classList.remove("oikein", "vaarin");
+            feedbackElement.textContent = "";
+
+            if (input.value) {
+              const nextInput = getNextInput(input);
+              if (nextInput) {
+                nextInput.focus();
+              }
+            }
           });
+
+          input.addEventListener("keydown", (event) => handleKeys(event, input));
 
           cell.appendChild(input);
         }
@@ -169,119 +157,92 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderClues() {
-    const acrossWords = currentPuzzle.words.filter((item) => item.direction === "across");
-    const downWords = currentPuzzle.words.filter((item) => item.direction === "down");
-
-    acrossWords.forEach((item) => {
+    puzzle.words.forEach((item) => {
       const clue = document.createElement("p");
       clue.className = "clue-item";
       clue.innerHTML = `<strong>${item.number}.</strong> ${item.clue}`;
-      acrossCluesElement.appendChild(clue);
-    });
 
-    downWords.forEach((item) => {
-      const clue = document.createElement("p");
-      clue.className = "clue-item";
-      clue.innerHTML = `<strong>${item.number}.</strong> ${item.clue}`;
-      downCluesElement.appendChild(clue);
-    });
-  }
-
-  function handleInput(input) {
-    input.value = input.value.toUpperCase().replace(/[^A-ZÅÄÖ]/g, "");
-
-    const cell = input.parentElement;
-    cell.classList.remove("oikein", "vaarin");
-    feedbackElement.textContent = "";
-
-    if (input.value) {
-      const nextInput = getNextInput(input, activeDirection);
-      if (nextInput) {
-        nextInput.focus();
+      if (item.direction === "across") {
+        acrossCluesElement.appendChild(clue);
+      } else {
+        downCluesElement.appendChild(clue);
       }
-    }
-  }
-
-  function handleKeydown(event, input) {
-    const key = event.key;
-
-    if (key === "ArrowRight") {
-      event.preventDefault();
-      activeDirection = "across";
-      focusInput(input, 0, 1);
-    }
-
-    if (key === "ArrowLeft") {
-      event.preventDefault();
-      activeDirection = "across";
-      focusInput(input, 0, -1);
-    }
-
-    if (key === "ArrowDown") {
-      event.preventDefault();
-      activeDirection = "down";
-      focusInput(input, 1, 0);
-    }
-
-    if (key === "ArrowUp") {
-      event.preventDefault();
-      activeDirection = "down";
-      focusInput(input, -1, 0);
-    }
-
-    if (key === "Backspace" && input.value === "") {
-      const previousInput = getPreviousInput(input, activeDirection);
-      if (previousInput) {
-        previousInput.focus();
-      }
-    }
+    });
   }
 
   function getInput(row, col) {
     return gridElement.querySelector(`input[data-row="${row}"][data-col="${col}"]`);
   }
 
-  function focusInput(input, rowChange, colChange) {
-    const row = Number(input.dataset.row);
-    const col = Number(input.dataset.col);
-    const next = getInput(row + rowChange, col + colChange);
-
-    if (next) {
-      next.focus();
-    }
-  }
-
-  function getNextInput(input, direction) {
+  function getNextInput(input) {
     const row = Number(input.dataset.row);
     const col = Number(input.dataset.col);
 
-    if (direction === "down") {
+    if (activeDirection === "down") {
       return getInput(row + 1, col);
     }
 
     return getInput(row, col + 1);
   }
 
-  function getPreviousInput(input, direction) {
+  function getPreviousInput(input) {
     const row = Number(input.dataset.row);
     const col = Number(input.dataset.col);
 
-    if (direction === "down") {
+    if (activeDirection === "down") {
       return getInput(row - 1, col);
     }
 
     return getInput(row, col - 1);
   }
 
-  function isWordCorrect(wordItem) {
-    const cleanWord = wordItem.word.toUpperCase();
+  function handleKeys(event, input) {
+    const row = Number(input.dataset.row);
+    const col = Number(input.dataset.col);
 
-    for (let i = 0; i < cleanWord.length; i++) {
-      const row = wordItem.direction === "down" ? wordItem.row + i : wordItem.row;
-      const col = wordItem.direction === "across" ? wordItem.col + i : wordItem.col;
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      activeDirection = "across";
+      const next = getInput(row, col + 1);
+      if (next) next.focus();
+    }
+
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      activeDirection = "across";
+      const previous = getInput(row, col - 1);
+      if (previous) previous.focus();
+    }
+
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+      activeDirection = "down";
+      const next = getInput(row + 1, col);
+      if (next) next.focus();
+    }
+
+    if (event.key === "ArrowUp") {
+      event.preventDefault();
+      activeDirection = "down";
+      const previous = getInput(row - 1, col);
+      if (previous) previous.focus();
+    }
+
+    if (event.key === "Backspace" && input.value === "") {
+      const previous = getPreviousInput(input);
+      if (previous) previous.focus();
+    }
+  }
+
+  function isWordCorrect(item) {
+    const word = item.word.toUpperCase();
+
+    for (let i = 0; i < word.length; i++) {
+      const row = item.direction === "down" ? item.row + i : item.row;
+      const col = item.direction === "across" ? item.col + i : item.col;
       const input = getInput(row, col);
 
-      if (!input || input.value.toUpperCase() !== cleanWord[i]) {
+      if (!input || input.value.toUpperCase() !== word[i]) {
         return false;
       }
     }
@@ -289,12 +250,12 @@ document.addEventListener("DOMContentLoaded", () => {
     return true;
   }
 
-  function markWord(wordItem, isCorrect) {
-    const cleanWord = wordItem.word.toUpperCase();
+  function markWord(item, isCorrect) {
+    const word = item.word.toUpperCase();
 
-    for (let i = 0; i < cleanWord.length; i++) {
-      const row = wordItem.direction === "down" ? wordItem.row + i : wordItem.row;
-      const col = wordItem.direction === "across" ? wordItem.col + i : wordItem.col;
+    for (let i = 0; i < word.length; i++) {
+      const row = item.direction === "down" ? item.row + i : item.row;
+      const col = item.direction === "across" ? item.col + i : item.col;
       const input = getInput(row, col);
 
       if (input) {
@@ -306,40 +267,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function checkAnswers() {
     let correctWords = 0;
-    let filledLetters = 0;
-    const inputs = gridElement.querySelectorAll("input");
 
-    inputs.forEach((input) => {
-      if (input.value.trim() !== "") {
-        filledLetters++;
-      }
-      input.parentElement.classList.remove("oikein", "vaarin");
-    });
-
-    if (filledLetters === 0) {
-      feedbackElement.textContent = "Kirjoita ensin vastauksia.";
-      scoreElement.textContent = `Pisteet: 0 / ${currentPuzzle.words.length}`;
-      return;
-    }
-
-    currentPuzzle.words.forEach((wordItem) => {
-      const correct = isWordCorrect(wordItem);
+    puzzle.words.forEach((item) => {
+      const correct = isWordCorrect(item);
 
       if (correct) {
         correctWords++;
       }
 
-      markWord(wordItem, correct);
+      markWord(item, correct);
     });
 
-    scoreElement.textContent = `Pisteet: ${correctWords} / ${currentPuzzle.words.length}`;
-    saveScore(correctWords);
+    scoreElement.textContent = `Pisteet: ${correctWords} / ${puzzle.words.length}`;
 
-    if (correctWords === currentPuzzle.words.length) {
+    if (correctWords === puzzle.words.length) {
       feedbackElement.textContent = "Kaikki oikein!";
     } else {
       feedbackElement.textContent = "Tarkista vielä vastaukset.";
     }
+
+    saveScore(correctWords);
   }
 
   function showAnswers() {
@@ -362,18 +309,8 @@ document.addEventListener("DOMContentLoaded", () => {
       input.parentElement.classList.remove("oikein", "vaarin");
     });
 
+    scoreElement.textContent = `Pisteet: 0 / ${puzzle.words.length}`;
     feedbackElement.textContent = "";
-    scoreElement.textContent = `Pisteet: 0 / ${currentPuzzle.words.length}`;
-  }
-
-  function startNewGame() {
-    currentPuzzleIndex++;
-
-    if (currentPuzzleIndex >= puzzles.length) {
-      currentPuzzleIndex = 0;
-    }
-
-    renderPuzzle();
   }
 
   function saveScore(score) {
@@ -381,15 +318,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const bestScore = Math.max(oldScore, score);
 
     localStorage.setItem(STORAGE_KEY, bestScore);
-
     localStorage.setItem("sanaristikko-score", bestScore);
     localStorage.setItem("sanaristikko", bestScore);
   }
 
-  newGameButton.addEventListener("click", startNewGame);
+  newGameButton.addEventListener("click", () => {
+    currentPuzzleIndex++;
+
+    if (currentPuzzleIndex >= puzzles.length) {
+      currentPuzzleIndex = 0;
+    }
+
+    renderPuzzle();
+  });
+
   checkButton.addEventListener("click", checkAnswers);
   showButton.addEventListener("click", showAnswers);
   clearButton.addEventListener("click", clearPuzzle);
 
   renderPuzzle();
-});
