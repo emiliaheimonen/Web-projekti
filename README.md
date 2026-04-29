@@ -8,9 +8,9 @@
 - Joonas Tuulaniemi / Github käyttäjä: Zulvey
 - Anastasiia Flikova / Github käyttäjä: anastasiiaflikova27-lang
 
-Sivuston kuvalähteet
-Etusivun kuva: https://www.freepik.com/free-vector/hand-drawn-teachers-day-background_17808359.htm
-Pelin kuvakkeet: https://www.freepik.com/icon/confident_9586904#fromView=resource_detail&position=2
+### Sivuston kuvalähteet
+- Etusivun kuva: https://www.freepik.com/free-vector/hand-drawn-teachers-day-background_17808359.htm
+- Pelin kuvakkeet: https://www.freepik.com/icon/confident_9586904#fromView=resource_detail&position=2
 
 
 / Kristiina lähteet: Tehtävässä hyödynnetty netistä löytyvää tietoja sivuilta stackoverflow.com, w3schools.com, github.com ja youtube.com. ChatGPT.com käytetty kirjoitusvirheiden etsinnässä, ja koodin rakenteen korjauksissa ja muotoilussa. Kuva otettu sivulta flaticon.com.
