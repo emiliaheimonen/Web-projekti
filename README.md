@@ -8,7 +8,7 @@
 - Joonas Tuulaniemi / Github käyttäjä: Zulvey
 - Anastasiia Flikova / Github käyttäjä: anastasiiaflikova27-lang
 
-### Sivuston kuvalähteet
+### Sivuston lähteet
 - Etusivun kuva: https://www.freepik.com/free-vector/hand-drawn-teachers-day-background_17808359.htm
 - Pelin kuvakkeet: https://www.freepik.com/icon/confident_9586904#fromView=resource_detail&position=2
 
